@@ -1,14 +1,56 @@
-// Update this page (the content is just a fallback if you fail to update the page)
 
-const Index = () => {
+import { useState } from "react";
+import { OrderSidebar } from "@/components/OrderSidebar";
+import { TopBar } from "@/components/TopBar";
+import { OrderReceipt } from "@/components/OrderReceipt";
+
+const orderItems = [
+  { seat: 4, code: "102", qty: 2, name: "CORONA" },
+  { seat: 5, code: "102", qty: 1, name: "CORONA", completed: true },
+];
+
+export default function Index() {
+  const [selectedOrder, setSelectedOrder] = useState("54");
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
+    <div className="flex min-h-screen w-full">
+      <OrderSidebar
+        selectedOrder={selectedOrder}
+        onSelectOrder={setSelectedOrder}
+      />
+      
+      <div className="flex-1">
+        <TopBar />
+        
+        <div className="grid grid-cols-3 gap-6 p-6">
+          <div className="space-y-6">
+            <h2 className="text-xl font-medium mb-4">Bar</h2>
+            <OrderReceipt
+              orderId="1"
+              timeElapsed="2:45 Min"
+              items={orderItems}
+            />
+          </div>
+          
+          <div className="space-y-6">
+            <h2 className="text-xl font-medium mb-4">Kitchen</h2>
+            <OrderReceipt
+              orderId="1"
+              timeElapsed="2:45 Min"
+              items={orderItems}
+            />
+          </div>
+          
+          <div className="space-y-6">
+            <h2 className="text-xl font-medium mb-4">Teppan</h2>
+            <OrderReceipt
+              orderId="1"
+              timeElapsed="2:45 Min"
+              items={orderItems}
+            />
+          </div>
+        </div>
       </div>
     </div>
   );
-};
-
-export default Index;
+}
