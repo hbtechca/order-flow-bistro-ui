@@ -22,9 +22,9 @@ export default function Index() {
       <div className="flex-1">
         <TopBar />
         
-        <div className="grid grid-cols-3 gap-4 p-6 bg-[#F1F0FB]">
+        <div className="grid grid-cols-3 gap-4 p-6 bg-[#F1F0FB] h-[calc(100vh-4rem)] overflow-y-auto">
           <div className="space-y-4">
-            <div className="flex items-center justify-between bg-white/60 rounded-lg p-3 shadow-sm">
+            <div className="flex items-center justify-between bg-white/60 rounded-lg p-3 shadow-sm sticky top-6">
               <h2 className="text-lg font-medium text-gray-800">Bar</h2>
               <span className="bg-purple-100 text-purple-800 text-sm font-medium px-2 py-1 rounded">
                 2 Orders
@@ -45,7 +45,7 @@ export default function Index() {
           </div>
           
           <div className="space-y-4">
-            <div className="flex items-center justify-between bg-white/60 rounded-lg p-3 shadow-sm">
+            <div className="flex items-center justify-between bg-white/60 rounded-lg p-3 shadow-sm sticky top-6">
               <h2 className="text-lg font-medium text-gray-800">Kitchen</h2>
               <span className="bg-purple-100 text-purple-800 text-sm font-medium px-2 py-1 rounded">
                 1 Order
@@ -61,7 +61,7 @@ export default function Index() {
           </div>
           
           <div className="space-y-4">
-            <div className="flex items-center justify-between bg-white/60 rounded-lg p-3 shadow-sm">
+            <div className="flex items-center justify-between bg-white/60 rounded-lg p-3 shadow-sm sticky top-6">
               <h2 className="text-lg font-medium text-gray-800">Teppan</h2>
               <span className="bg-purple-100 text-purple-800 text-sm font-medium px-2 py-1 rounded">
                 3 Orders
